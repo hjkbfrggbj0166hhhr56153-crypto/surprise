@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d25">
+  <title>هدية صغيرة لنونتي ✨</title>
+  <style>
+    :root {
+      --night: #080b20;
+      --panel: rgba(21, 27, 62, .82);
+      --pink: #ff8ec7;
+      --lavender: #c4b5fd;
+      --white: #fff8ff;
+      --muted: #d8d7f3;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--white);
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(100, 90, 190, .28), transparent 35%),
+        radial-gradient(ellipse at 85% 70%, rgba(190, 75, 150, .17), transparent 33%),
+        linear-gradient(160deg, #07091b, #111638 60%, #090b20);
+      overflow-x: hidden;
+    }
+    #stars, #hearts { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .star { position: absolute; border-radius: 50%; background: #fff; animation: twinkle 2.7s infinite ease-in-out; }
+    @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.25); } }
+    .shooting-star { position: absolute; width: 90px; height: 2px; background: linear-gradient(90deg, transparent, #fff); transform: rotate(-35deg); animation: shoot 1.2s ease-out forwards; }
+    @keyframes shoot { from { opacity: 0; translate: 0 0; } 15% { opacity: 1; } to { opacity: 0; translate: -240px 150px; } }
+    .wrap { width: min(100% - 28px, 620px); margin: 0 auto; padding: 30px 0 44px; position: relative; z-index: 1; }
+    header { text-align: center; margin: 10px 0 22px; }
+    .moon { font-size: 46px; filter: drop-shadow(0 0 20px rgba(255,245,190,.35)); }
+    .eyebrow { color: var(--lavender); letter-spacing: 1px; font-size: .86rem; }
+    h1 { font-size: clamp(1.8rem, 7vw, 2.7rem); line-height: 1.35; margin: 8px 0; }
+    .gradient { background: linear-gradient(90deg, #ffd6ee, #c4b5fd); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .sub { color: var(--muted); line-height: 1.9; margin: 0 auto; max-width: 440px; }
+    .card {
+      border: 1px solid rgba(220, 210, 255, .2); border-radius: 25px;
+      padding: clamp(20px, 5vw, 32px); background: var(--panel);
+      box-shadow: 0 18px 55px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.05);
+      backdrop-filter: blur(12px);
+    }
+    .hidden { display: none !important; }
+    .center { text-align: center; }
+    .big-heart { font-size: 56px; display: block; margin: 2px 0 10px; animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    .btn {
+      border: 0; border-radius: 15px; padding: 14px 18px; min-height: 50px;
+      font: inherit; font-weight: 750; cursor: pointer; transition: transform .15s, filter .15s;
+      width: 100%; color: #1b1030; background: linear-gradient(110deg, #ffadd8, #c4b5fd);
+      box-shadow: 0 8px 24px rgba(195, 142, 238, .18); margin-top: 12px;
+    }
+    .btn:active { transform: scale(.98); }
+    .btn.secondary { color: var(--white); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); box-shadow: none; }
+    .btn:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+    .pill { display: inline-block; padding: 6px 12px; border-radius: 99px; background: rgba(196,181,253,.12); color: #e4ddff; font-size: .86rem; }
+    .progress { height: 6px; background: rgba(255,255,255,.1); border-radius: 9px; overflow: hidden; margin: 18px 0 22px; }
+    .bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--pink), var(--lavender)); transition: width .3s; }
+    h2 { font-size: 1.45rem; line-height: 1.65; margin: 12px 0 18px; }
+    .answers { display: grid; gap: 10px; }
+    .answer {
+      border: 1px solid rgba(255,255,255,.16); border-radius: 14px; padding: 13px 15px;
+      background: rgba(255,255,255,.045); color: var(--white); font: inherit; text-align: right; cursor: pointer;
+    }
+    .answer:hover, .answer:focus-visible { border-color: var(--pink); background: rgba(255,142,199,.1); outline: none; }
+    .feedback { color: #ffd2e8; min-height: 28px; line-height: 1.8; margin: 14px 0 0; }
+    .final-note { white-space: pre-line; line-height: 2.1; font-size: 1.04rem; }
+    .tiny { color: #aaaed8; font-size: .82rem; line-height: 1.8; margin-top: 20px; text-align: center; }
+    .floating-heart { position: absolute; bottom: -30px; animation: floatUp 4s ease-in forwards; opacity: .85; }
+    @keyframes floatUp { to { transform: translateY(-105vh) rotate(25deg); opacity: 0; } }
+    footer { text-align: center; color: #aeb1d7; font-size: .8rem; margin-top: 18px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+  <div id="hearts" aria-hidden="true"></div>
+  <main class="wrap">
+    <header>
+      <div class="moon" aria-hidden="true">🌙</div>
+      <div class="eyebrow">رسالة صغيرة تحت السما</div>
+      <h1>إلى <span class="gradient">نونتي</span> الجميلة 💗</h1>
+      <p class="sub">في مفاجأة صغيرة معمولة مخصوص ليكي… خدي نفس، وخلّي قلبك جاهز ✨</p>
+    </header>
+
+    <section class="card center" id="intro">
+      <span class="big-heart" aria-hidden="true">💌</span>
+      <h2>يا ترى هتقدري تكمّلي المفاجأة للآخر؟</h2>
+      <p class="sub">كام سؤال صغير، شوية ضحك، وفي الآخر رسالة من عمورتك ليكي.</p>
+      <button class="btn" id="startBtn">يلا نبدأ يا قمري ✨</button>
+      <p class="tiny">ملاحظة: دي مفاجأة بسيطة أونلاين، ومش محتاجة تسجيل أو بيانات شخصية.</p>
+    </section>
+
+    <section class="card hidden" id="quiz" aria-live="polite">
+      <div class="pill" id="counter">السؤال 1 من 6</div>
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <h2 id="question"></h2>
+      <div class="answers" id="answers"></div>
+      <p class="feedback" id="feedback"></p>
+      <button class="btn hidden" id="nextBtn">كمّلي المفاجأة 💫</button>
+    </section>
+
+    <section class="card center hidden" id="ending">
+      <span class="big-heart" aria-hidden="true">💖</span>
+      <div class="pill">وصلتي لآخر المفاجأة</div>
+      <h2>ودي رسالتي ليكي يا نونتي 🌙</h2>
+      <p class="final-note" id="finalNote"></p>
+      <button class="btn" id="heartBtn">املي السما قلوب ❤️</button>
+      <button class="btn secondary" id="replayBtn">نلعب من الأول؟ ✨</button>
+      <p class="tiny">من عمورتك، بكل الود والاهتمام 💗</p>
+    </section>
+    <footer>اتعملت بحب مخصوص لنونتي ✨</footer>
+  </main>
+
+  <script>
+    // تقدري تعدّلي الأسئلة والرسالة من هنا بسهولة.
+    const questions = [
+      {
+        q: "لو يومك كان طويل ومتعب، تحبي عمورتك يعمل إيه؟ 🥹",
+        a: ["يسمعني ويطمن عليّا 💗", "يبعتلي ميمز تضحكني 😂", "الاتنين طبعًا ✨"],
+        correct: 2,
+        note: "أهم حاجة عندي إنك تحسي إن فيه حد بيسمعك وبيقدّر مشاعرك."
+      },
+      {
+        q: "اختبار سريع: مين نونتي الجميلة؟ 🌷",
+        a: ["أجمل نونتي في المجرة 🌙", "قمر منوّر الدنيا ✨", "الاتنين ومفيش نقاش 💞"],
+        correct: 2,
+        note: "الإجابة الصح: الاتنين، ومعاهم نجوم المجرة كمان 😂💗"
+      },
+      {
+        q: "لو علاقتنا كانت مكان، تحبي تكون فين؟ 🌌",
+        a: ["تحت السما والنجوم", "على البحر وقت الغروب", "مكان هادي نتكلم فيه بالساعات"],
+        correct: null,
+        note: "المكان الحلو بيبقى أحلى بالونس والكلام الصادق."
+      },
+      {
+        q: "إيه أحلى حاجة في الاهتمام؟ 💌",
+        a: ["رسالة تطمّن عليّا", "حد يفتكر التفاصيل الصغيرة", "إن الكلام يبقى صادق والأفعال تثبته"],
+        correct: 2,
+        note: "كلهم حلوين، والأهم إن الاهتمام يكون صادق ومتبادل."
+      },
+      {
+        q: "لو عندك زرار سحري دلوقتي، تختاري إيه؟ 🎁",
+        a: ["ضحكة من القلب 😂", "يوم كله راحة وهدوء 🌸", "مفاجأة لطيفة من عمورتك 💗"],
+        correct: null,
+        note: "أتمنى دايمًا تلاقي أسباب صغيرة تفرّح قلبك."
+      },
+      {
+        q: "آخر سؤال يا نونتي… جاهزة للرسالة؟ 🥹",
+        a: ["جاهزة جدًا 💖", "افتحها بقى يا عمورت 😂", "قلبي مش مستحمل ✨"],
+        correct: null,
+        note: "طب خدي نفس كده… الرسالة جاية حالًا 💌"
+      }
+    ];
+
+    let index = 0;
+    let answered = false;
+    const $ = id => document.getElementById(id);
+    const intro = $("intro"), quiz = $("quiz"), ending = $("ending");
+
+    function makeStars() {
+      const layer = $("stars");
+      for (let i = 0; i < 95; i++) {
+        const star = document.createElement("i");
+        star.className = "star";
+        const size = Math.random() * 2.5 + 1;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 3 + "s";
+        layer.appendChild(star);
+      }
+      setInterval(() => {
+        const s = document.createElement("i");
+        s.className = "shooting-star";
+        s.style.left = (Math.random() * 75 + 10) + "%";
+        s.style.top = (Math.random() * 45 + 5) + "%";
+        layer.appendChild(s);
+        setTimeout(() => s.remove(), 1300);
+      }, 4200);
+    }
+
+    function renderQuestion() {
+      answered = false;
+      const item = questions[index];
+      $("counter").textContent = `السؤال ${index + 1} من ${questions.length}`;
+      $("bar").style.width = `${(index / questions.length) * 100}%`;
+      $("question").textContent = item.q;
+      $("feedback").textContent = "";
+      $("nextBtn").classList.add("hidden");
+      const list = $("answers");
+      list.innerHTML = "";
+      item.a.forEach((answer, i) => {
+        const btn = document.createElement("button");
+        btn.className = "answer";
+        btn.textContent = answer;
+        btn.addEventListener("click", () => {
+          if (answered) return;
+          answered = true;
+          [...list.children].forEach(b => b.disabled = true);
+          $("feedback").textContent = item.note;
+          btn.style.borderColor = "#ff8ec7";
+          btn.style.background = "rgba(255,142,199,.13)";
+          $("nextBtn").textContent = index === questions.length - 1 ? "افتحي رسالتك يا نونتي 💖" : "كمّلي المفاجأة 💫";
+          $("nextBtn").classList.remove("hidden");
+        });
+        list.appendChild(btn);
+      });
+    }
+
+    function start() {
+      intro.classList.add("hidden");
+      ending.classList.add("hidden");
+      quiz.classList.remove("hidden");
+      index = 0;
+      renderQuestion();
+    }
+
+    $("startBtn").addEventListener("click", start);
+    $("nextBtn").addEventListener("click", () => {
+      index++;
+      if (index < questions.length) renderQuestion();
+      else {
+        quiz.classList.add("hidden");
+        ending.classList.remove("hidden");
+        $("bar").style.width = "100%";
+        launchHearts(24);
+      }
+    });
+
+    function launchHearts(count) {
+      const layer = $("hearts");
+      const symbols = ["💗", "💖", "💕", "✨", "💘"];
+      for (let i = 0; i < count; i++) {
+        const h = document.createElement("span");
+        h.className = "floating-heart";
+        h.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        h.style.left = Math.random() * 96 + "%";
+        h.style.fontSize = (18 + Math.random() * 20) + "px";
+        h.style.animationDuration = (3 + Math.random() * 3) + "s";
+        layer.appendChild(h);
+        setTimeout(() => h.remove(), 6500);
+      }
+    }
+    $("heartBtn").addEventListener("click", () => launchHearts(45));
+    $("replayBtn").addEventListener("click", start);
+
+    // عدّلي الرسالة دي لو حابة تخليها بكلامك الشخصي.
+    $("finalNote").textContent =
+      "يا نونتي ❤️\n\n" +
+      "يمكن دي مجرد صفحة صغيرة على الموبايل، بس أنا عملتها مخصوص عشان أرسم على وشك ابتسامة.\n\n" +
+      "وجودك وكلامك الحلو ممكن يخلّوا يوم عادي يبقى ألطف بكتير. أتمنى دايمًا تحسي إنك متقدّرة ومسموعة، وإنك تستاهلي كل حاجة حلوة.\n\n" +
+      "خلي النجوم دي تفكّرك إن فيه حد اسمه عمورتك حب يعملك مفاجأة صغيرة مخصوص ليكي. 💗\n\n" +
+      "ربنا يفرّح قلبك يا نونتي، وتفضلي دايمًا بخير وابتسامتك منوّرة دنياكي. 🌙✨\n\n" +
+      "— عمورتك 💌";
+
+    makeStars();
+  </script>
+</body>
+</html>
